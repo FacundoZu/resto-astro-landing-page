@@ -1,0 +1,18 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* 🎨 Botón reutilizable */
+.btn-primary {
+  @apply px-4 py-2 rounded-full text-white bg-amber-600 hover:bg-amber-700 transition-colors;
+}
+
+/* 🔗 Enlaces de navegación */
+.nav-link {
+  @apply text-lg font-medium text-white hover:text-amber-400 transition-colors;
+}
+
+/* 📌 Contenedor del header */
+.nav-container {
+  @apply flex justify-between items-center py-6 w-full md:w-11/12 px-4 mx-auto;
+}
+
