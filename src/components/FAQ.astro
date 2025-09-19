@@ -1,0 +1,75 @@
+---
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+const faqs: FAQItem[] = [
+  { question: "¿Aceptan tarjetas?", answer: "Sí, aceptamos todas las tarjetas principales." },
+  { question: "¿Tiene estacionamiento?", answer: "Contamos con estacionamiento limitado en la calle." },
+  { question: "¿Se puede pedir para llevar?", answer: "Sí, ofrecemos pedidos para llevar y delivery." },
+  { question: "¿Tienen música en vivo?", answer: "Sí, los fines de semana tenemos shows y DJ en vivo." },
+];
+---
+
+<section id="faq" class="py-24 bg-black text-white">
+  <div class="container mx-auto px-4 max-w-3xl">
+    <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">Preguntas Frecuentes</h2>
+    <div class="space-y-4 z-20">
+      {faqs.map((item, index) => (
+        <div class="faq-item border border-white/10 rounded-xl overflow-hidden cursor-pointer" data-index={index}>
+          <div class="faq-header p-4 flex justify-between items-center font-semibold hover:bg-white/5 hover:text-amber-400 transition-all">
+            {item.question}
+            <span class="faq-icon text-2xl">+</span>
+          </div>
+          <div class="faq-content px-4 pb-4 max-h-0 overflow-hidden opacity-0 transition-all duration-300">
+            <p class="text-gray-300 my-4">{item.answer}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <script type="module">
+    const faqItems = document.querySelectorAll(".faq-item");
+
+    faqItems.forEach(item => {
+      const header = item.querySelector(".faq-header");
+      const content = item.querySelector(".faq-content");
+      const icon = item.querySelector(".faq-icon");
+
+      header.addEventListener("click", () => {
+        const isOpen = item.classList.contains("open");
+
+        // Cierra todas
+        faqItems.forEach(f => {
+          f.classList.remove("open");
+          f.querySelector(".faq-content").style.maxHeight = "0";
+          f.querySelector(".faq-content").style.opacity = "0";
+          f.querySelector(".faq-icon").textContent = "+";
+        });
+
+        if (!isOpen) {
+          item.classList.add("open");
+          content.style.maxHeight = content.scrollHeight + "px";
+          content.style.opacity = "1";
+          icon.textContent = "−";
+        }
+      });
+    });
+  </script>
+
+  <style>
+    .faq-content {
+      transition: all 0.3s ease;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+    .faq-icon {
+      transition: transform 0.3s ease;
+    }
+    .faq-item.open .faq-icon {
+      transform: rotate(180deg);
+    }
+  </style>
+</section>

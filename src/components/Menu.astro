@@ -1,63 +1,168 @@
 <section id="menu" class="relative py-24 bg-black text-white overflow-hidden">
-    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
-      
-      <!-- Texto motivador -->
-      <div class="flex-1 text-center md:text-left">
-        <h2 class="text-4xl md:text-5xl font-bold mb-6">Descubrí nuestro menú</h2>
-        <p class="text-gray-300 text-lg md:text-xl">
-          Platos únicos y coctelería de autor que combinan sabor y creatividad. 
-          Vení a probar nuestras especialidades y tragos exclusivos.
-        </p>
-      </div>
-  
-      <!-- Carrusel doble -->
-      <div class="flex-1 flex gap-4 relative">
-        <!-- Carrusel izquierda -->
-        <div class="overflow-hidden relative w-1/2 h-120">
-          <div class="menu-carousel-left flex flex-col space-y-4 animate-scroll-up">
-            <img src="/images/menu1.webp" alt="Plato 1" class="w-full rounded-xl"/>
-            <img src="/images/menu1.webp" alt="Plato 2" class="w-full rounded-xl"/>
-            <img src="/images/menu1.webp" alt="Plato 3" class="w-full rounded-xl"/>
-            <img src="/images/menu1.webp" alt="Plato 4" class="w-full rounded-xl"/>
-          </div>
-          <!-- Difuminado top/bottom -->
-          <div class="absolute top-0 left-0 w-full h-16 bg-gradient-to-b from-black/90 to-transparent pointer-events-none"></div>
-          <div class="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-black/90 to-transparent pointer-events-none"></div>
+  <div
+    class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12"
+  >
+    <!-- Texto motivador -->
+    <div class="flex-1 text-center md:text-left">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6">Descubrí nuestro menú</h2>
+      <p class="text-gray-300 text-lg md:text-xl">
+        Platos únicos y coctelería de autor que combinan sabor y creatividad.
+        Vení a probar nuestras especialidades y tragos exclusivos.
+      </p>
+      <a href="#contact" class="btn-primary mt-6 inline-block"> Ver menú </a>
+    </div>
+
+    <!-- Carrusel doble -->
+    <div class="flex-1 flex gap-4 relative">
+      <!-- Carrusel izquierda -->
+      <div class="overflow-hidden relative w-1/2 h-120">
+        <div
+          class="menu-carousel-left flex flex-col space-y-4 animate-scroll-up"
+        >
+          <!-- 📌 Duplicamos el set de imágenes -->
+          <img
+            src="/images/menu1.webp"
+            alt="Plato 1"
+            class="w-full rounded-xl"
+          />
+          <img
+            src="/images/menu2.webp"
+            alt="Plato 2"
+            class="w-full rounded-xl"
+          />
+          <img
+            src="/images/menu3.webp"
+            alt="Plato 3"
+            class="w-full rounded-xl"
+          />
+          <img
+            src="/images/menu4.webp"
+            alt="Plato 4"
+            class="w-full rounded-xl"
+          />
+          <!-- Duplicado -->
+          <img
+            src="/images/menu1.webp"
+            alt="Plato 1"
+            class="w-full rounded-xl"
+          />
+          <img
+            src="/images/menu2.webp"
+            alt="Plato 2"
+            class="w-full rounded-xl"
+          />
+          <img
+            src="/images/menu3.webp"
+            alt="Plato 3"
+            class="w-full rounded-xl"
+          />
+          <img
+            src="/images/menu4.webp"
+            alt="Plato 4"
+            class="w-full rounded-xl"
+          />
         </div>
-  
-        <!-- Carrusel derecha -->
-        <div class="overflow-hidden relative w-1/2 h-120 mt-20">
-          <div class="menu-carousel-right flex flex-col space-y-4 animate-scroll-down">
-            <img src="/images/menu1.webp" alt="Plato 5" class="w-full rounded-xl"/>
-            <img src="/images/menu1.webp" alt="Plato 6" class="w-full rounded-xl"/>
-            <img src="/images/menu1.webp" alt="Plato 7" class="w-full rounded-xl"/>
-            <img src="/images/menu1.webp" alt="Plato 8" class="w-full rounded-xl"/>
-          </div>
-          <!-- Difuminado top/bottom -->
-          <div class="absolute top-0 left-0 w-full h-16 bg-gradient-to-b from-black/90 to-transparent pointer-events-none"></div>
-          <div class="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-black/90 to-transparent pointer-events-none"></div>
+        <!-- Difuminado top/bottom -->
+        <div
+          class="absolute top-0 left-0 w-full h-16 bg-gradient-to-b from-black/90 to-transparent pointer-events-none"
+        >
+        </div>
+        <div
+          class="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-black/90 to-transparent pointer-events-none"
+        >
+        </div>
+      </div>
+
+      <!-- Carrusel derecha -->
+      <div class="overflow-hidden relative w-1/2 h-120 mt-20">
+        <div
+          class="menu-carousel-right flex flex-col space-y-4 animate-scroll-down"
+        >
+          <!-- 📌 Duplicamos también acá -->
+          <img
+            src="/images/menu5.webp"
+            alt="Plato 5"
+            class="w-full rounded-xl"
+          />
+          <img
+            src="/images/menu6.webp"
+            alt="Plato 6"
+            class="w-full rounded-xl"
+          />
+          <img
+            src="/images/menu7.webp"
+            alt="Plato 7"
+            class="w-full rounded-xl"
+          />
+          <img
+            src="/images/menu8.webp"
+            alt="Plato 8"
+            class="w-full rounded-xl"
+          />
+          <!-- Duplicado -->
+          <img
+            src="/images/menu5.webp"
+            alt="Plato 5"
+            class="w-full rounded-xl"
+          />
+          <img
+            src="/images/menu6.webp"
+            alt="Plato 6"
+            class="w-full rounded-xl"
+          />
+          <img
+            src="/images/menu7.webp"
+            alt="Plato 7"
+            class="w-full rounded-xl"
+          />
+          <img
+            src="/images/menu8.webp"
+            alt="Plato 8"
+            class="w-full rounded-xl"
+          />
+        </div>
+        <!-- Difuminado top/bottom -->
+        <div
+          class="absolute top-0 left-0 w-full h-16 bg-gradient-to-b from-black/90 to-transparent pointer-events-none"
+        >
+        </div>
+        <div
+          class="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-black/90 to-transparent pointer-events-none"
+        >
         </div>
       </div>
     </div>
-  
-    <style>
-      /* Animaciones de scroll vertical */
-      @keyframes scrollUp {
-        0% { transform: translateY(0); }
-        100% { transform: translateY(-50%); }
+  </div>
+
+  <style>
+    /* Animaciones de scroll vertical infinito */
+    @keyframes scrollUp {
+      0% {
+        transform: translateY(0);
       }
-      @keyframes scrollDown {
-        0% { transform: translateY(-50%); }
-        100% { transform: translateY(0); }
+      100% {
+        transform: translateY(-50%);
+      } /* Ahora recorre la mitad del bloque duplicado */
+    }
+    @keyframes scrollDown {
+      0% {
+        transform: translateY(-50%);
       }
-  
-      .animate-scroll-up {
-        animation: scrollUp 20s linear infinite;
+      100% {
+        transform: translateY(0);
       }
-  
-      .animate-scroll-down {
-        animation: scrollDown 20s linear infinite;
-      }
-    </style>
-  </section>
-  
+    }
+
+    .animate-scroll-up {
+      animation: scrollUp 25s linear infinite;
+    }
+    .animate-scroll-down {
+      animation: scrollDown 25s linear infinite;
+    }
+
+    .menu-carousel-left:hover,
+    .menu-carousel-right:hover {
+      animation-play-state: paused;
+    }
+  </style>
+</section>

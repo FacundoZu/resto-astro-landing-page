@@ -1,0 +1,106 @@
+---
+import { items, type Item } from "../data/eventos.ts";
+
+// Dividimos en eventos y promos
+const events = items.filter((i) => i.type === "event");
+const promos = items.filter((i) => i.type === "promo");
+---
+
+<section
+    id="eventos"
+    class="relative py-24 bg-black text-white overflow-hidden"
+>
+    <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-12">Eventos & Promos</h2>
+
+        <div class="grid md:grid-cols-2 gap-12">
+            <!-- Carrusel Eventos -->
+            <div class="relative w-full overflow-hidden rounded-2xl">
+                <h3 class="text-2xl font-semibold mb-4">🎶 Eventos</h3>
+                <div
+                    id="carousel-events"
+                    class="flex transition-transform duration-700 ease-in-out"
+                >
+                    {
+                        events.map((e: Item) => (
+                            <div class="min-w-full relative">
+                                <img
+                                    src={e.image}
+                                    alt={e.title}
+                                    class="w-full h-72 object-cover"
+                                />
+                                <div class="absolute inset-0 bg-black/50 flex flex-col justify-center items-center px-4 text-center">
+                                    <p
+                                        class={`${e.color} font-bold uppercase mb-2`}
+                                    >
+                                        {e.date}
+                                    </p>
+                                    <h3 class="text-2xl font-semibold">
+                                        {e.title}
+                                    </h3>
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+
+            <!-- Carrusel Promos -->
+            <div class="relative w-full overflow-hidden rounded-2xl">
+                <h3 class="text-2xl font-semibold mb-4">🔥 Promos</h3>
+                <div
+                    id="carousel-promos"
+                    class="flex transition-transform duration-700 ease-in-out"
+                >
+                    {
+                        promos.map((p: Item) => (
+                            <div class="min-w-full relative">
+                                <img
+                                    src={p.image}
+                                    alt={p.title}
+                                    class="w-full h-72 object-cover"
+                                />
+                                <div class="absolute inset-0 bg-black/50 flex flex-col justify-center items-center px-4 text-center">
+                                    <p
+                                        class={`${p.color} font-bold uppercase mb-2`}
+                                    >
+                                        {p.date}
+                                    </p>
+                                    <h3 class="text-2xl font-semibold">
+                                        {p.title}
+                                    </h3>
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 🎶 Carrusel Eventos
+        const eventsCarousel = document.getElementById("carousel-events");
+        const eventsSlides = eventsCarousel?.children.length ?? 0;
+        let eventsIndex = 0;
+
+        function showEvent(i: number) {
+            if (!eventsCarousel) return;
+            eventsIndex = (i + eventsSlides) % eventsSlides;
+            eventsCarousel.style.transform = `translateX(-${eventsIndex * 100}%)`;
+        }
+        setInterval(() => showEvent(eventsIndex + 1), 5000); // cada 4s
+
+        // 🔥 Carrusel Promos
+        const promosCarousel = document.getElementById("carousel-promos");
+        const promosSlides = promosCarousel?.children.length ?? 0;
+        let promosIndex = 0;
+
+        function showPromo(i: number) {
+            if (!promosCarousel) return;
+            promosIndex = (i + promosSlides) % promosSlides;
+            promosCarousel.style.transform = `translateX(-${promosIndex * 100}%)`;
+        }
+        setInterval(() => showPromo(promosIndex + 1), 6000); // cada 5s
+    </script>
+</section>

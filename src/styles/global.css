@@ -3,7 +3,7 @@
 
 /* 🎨 Botón reutilizable */
 .btn-primary {
-  @apply px-4 py-2 rounded-full text-white bg-amber-600 hover:bg-amber-700 transition-colors;
+  @apply px-4 py-2 rounded-full text-white bg-amber-600 hover:bg-amber-700 transition-colors font-semibold;
 }
 
 /* 🔗 Enlaces de navegación */
@@ -14,5 +14,45 @@
 /* 📌 Contenedor del header */
 .nav-container {
   @apply flex justify-between items-center py-6 w-full md:w-11/12 px-4 mx-auto;
+}
+
+/* 🎨 Fondo decorativo */
+.bg-decorative-amber {
+  @apply absolute size-80 opacity-80 bg-gradient-to-tr from-amber-500/50 to-transparent rounded-full blur-3xl pointer-events-none z-10;
+}
+
+.bg-decorative-pink {
+  @apply absolute right-0 size-64 md:size-80 bg-gradient-to-br from-pink-500/40 to-transparent rounded-full blur-3xl pointer-events-none z-10;
+}
+
+.bg-decorative-purple {
+  @apply absolute size-56 md:size-56 bg-gradient-to-tl from-purple-500/30 to-transparent rounded-full blur-2xl pointer-events-none z-10;
+}
+
+/* 🔹 Icono de expandir/cerrar FAQ */
+details summary {
+  @apply relative;
+  list-style: none;
+  /* quitar el triángulo nativo */
+  cursor: pointer;
+  padding-right: 2rem;
+  /* espacio para el icono */
+}
+
+details summary::after {
+  content: "+";
+  @apply absolute right-4 top-1/2 transform -translate-y-1/2 text-amber-500 font-bold text-xl transition-transform duration-300;
+}
+
+/* Cuando el <details> está abierto */
+details[open] summary::after {
+  content: "−";
+  @apply rotate-180;
+  /* pequeño giro opcional */
+}
+
+/* Hover del summary */
+details summary:hover {
+  @apply text-amber-400;
 }
 
