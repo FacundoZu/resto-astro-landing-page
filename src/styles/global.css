@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+
 /* 🎨 Botón reutilizable */
 .btn-primary {
   @apply px-4 py-2 rounded-full text-white bg-amber-600 hover:bg-amber-700 transition-colors font-semibold;
